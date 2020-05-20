@@ -1,0 +1,39 @@
+html {
+    background-color: cornsilk;
+    text-align: center;
+}
+
+a {
+    color: navy;
+}
+
+.header {
+    padding: 30px;
+}
+
+img {
+    width: 750px;
+    max-width: 90%;
+}
+
+.question {
+    padding: 30px;
+    width: 750px;
+    max-width: 90%;
+    text-align: left;
+    margin: auto;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+textAreaContainer {
+    margin: auto;
+    padding: 5px;
+}
+
+footer {
+    margin-left: 700px;
+}

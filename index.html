@@ -1,7 +1,77 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Lab1 Survey</title>
+        <link href = "style.css" rel = "stylesheet" type = "text/css">
+    </head>
+    <body>
+        <div class = "header">
+            <h1>Survey</h1>
+            <p>Please visit <a href = "https://www.octranspo.com/en/">OC Transpo</a> and fill this survey.</p>
+        </div>
+
+        <a href = "https://www.octranspo.com/en/"><img src = "oc.png"></a>
+
+        <form>
+            <div class = "question">
+                <h2>Your name:</h2>
+                <p><label>First Name:
+                    <input id = "firstName" type = "text" placeholder = "First name" />(First name)
+                </label></p>
+            </div>
+
+            <div class = "question">
+                <h2>What is your gender?</h2>
+                <input type = "radio" name = "gender">Male<br>
+                <input type = "radio" name = "gender">Female<br>
+            </div>
+
+            <div class = "question">
+                <h2>How often do you use this website?</h2>
+                <select>
+                    <option value="twice">Twice a day</option>
+                    <option value="once">Once a day</option>
+                    <option value="week">Once a week</option>
+                    <option value="month">Once a month</option>
+                </select>
+            </div>
+
+            <div class = "question">
+                <h2>What information do you visit OC Transpo website for?</h2>
+                <input type = "checkbox" name = "info" value = "plan">Plan a trip<br>
+                <input type = "checkbox" name = "info" value = "update">Service update<br>
+                <input type = "checkbox" name = "info" value = "next">Next departure<br>
+                <input type = "checkbox" name = "info" value = "news">Bus news<br>
+
+            </div>
+
+            <div class = "question">
+                <h2>Do you agree the UI of OC Transpo website is efficient?</h2>
+                <select>
+                    <option value="stronga">Strongly agree</option>
+                    <option value="agree">Agree</option>
+                    <option value="disagree">Disagree</option>
+                    <option value="strongd">Strongly disagree</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <h2>Additional comments to help improve the UI:</h2>
+                <div class="textAreaContainer">
+                    <textarea></textarea>
+                </div>
+            </div>
+
+            <p>Thanks for filling this survey.</p>
+            <button type = "button" id = "submit">Submit</button>
+
+        </form>
+
+        <br>
+        <br>
+    </body>
+
+    <footer>website designed by Yiwen Liu (8943192)</footer>
+
 </html>
