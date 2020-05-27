@@ -5,7 +5,8 @@ html {
 
 footer {
     text-align: center;
-    padding: 25px;
+    position: absolute;
+    bottom: 25px;
 }
 
 h1 {
