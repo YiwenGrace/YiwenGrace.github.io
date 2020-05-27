@@ -92,11 +92,7 @@ function restrictListProducts(prods, restrictions) {
 			
 			selectedProducts.push(prods[i]);
 		}
-		else if (restriction == "None"){
-
-			selectedProducts.push(prods[i]);
-
-		}
+		
 	}
 
 	return selectedProducts;
