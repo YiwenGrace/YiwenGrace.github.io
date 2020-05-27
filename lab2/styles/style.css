@@ -1,10 +1,11 @@
 html {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     background-color: cornsilk;
 }
 
 footer {
-    margin-left: 700px;
+    text-align: center;
+    padding: 25px;
 }
 
 h1 {
@@ -13,11 +14,11 @@ h1 {
 
 .tab {
     overflow: hidden;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     background-color: #f1f1f1;
-}
+  }
 
-.tab button {
+  .tab button {
     background-color: inherit;
     float: left;
     border: none;
@@ -25,15 +26,15 @@ h1 {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-}
+  }
 
-.tab button:hover {
+  .tab button:hover {
     background-color: #ddd;
-}
+  }
 
-.tab button .active {
+  .tab button.active {
     background-color: #ccc;
-}
+  }
 
 .tabcontent {
     display: none;
