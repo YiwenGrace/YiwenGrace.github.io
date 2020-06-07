@@ -6,7 +6,7 @@ var products = [
         vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		foodGroup: [1,0,0,0],
+		foodGroup: [1,0,0],
 		image: "./img/brocoli.jpg",
 		price: 1.99
     },
@@ -15,7 +15,7 @@ var products = [
 		vegetarian: true,
 		glutenFree: false,
 		organic: false,
-		foodGroup: [0,1,0,0],
+		foodGroup: [0,1,0],
 		image:"./img/bread.jpg",
 		price: 1.69
     },
@@ -24,7 +24,7 @@ var products = [
 		vegetarian: false,
 		glutenFree: true,
 		organic: true,
-		foodGroup: [0,0,1,0],
+		foodGroup: [0,0,1],
 		image: "./img/steak.jpg",
 		price: 8.99
 	},
@@ -33,7 +33,7 @@ var products = [
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,
-		category: "meat",
+		foodGroup: [0,0,1],
 		image: "./img/pork.jpg",
 		price: 12.99
     },
@@ -42,7 +42,7 @@ var products = [
 		vegetarian: true,
 		glutenFree: false,
 		organic: false,
-		category: "bakery",
+		foodGroup: [0,1,0],
 		image: "./img/pasta.jpg",
 		price: 0.99
     },
@@ -51,7 +51,7 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		category: "fruitVege",
+		foodGroup: [1,0,0],
 		image: "./img/salad.jpg",
 		price: 6.99
     },
@@ -60,7 +60,7 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		category: "fruitVege",
+		foodGroup: [1,0,0],
 		image: "./img/orgBanana.jpg",
 		price: 3.99
 	},
@@ -69,7 +69,7 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		category: "fruitVege",
+		foodGroup: [1,0,0],
 		image: "./img/banana.jpg",
 		price: 2.99
     },
@@ -78,7 +78,7 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		category: "fruitVege",
+		foodGroup: [1,0,0],
 		image: "./img/orgApple.jpg",
 		price: 4.99
     },
@@ -87,7 +87,7 @@ var products = [
 		vegetarian: false,
 		glutenFree: false,
 		organic: false,
-		category: "meat",
+		foodGroup: [0,0,1],
 		image: "./img/chicken.jpg",
 		price: 8.99
     },
@@ -96,43 +96,30 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		category: "fruitVege",
+		foodGroup: [1,0,0],
 		image: "./img/orange.jpg",
 		price: 7.99
 	}
 ];
 
-function restrictListProducts(prods, glutenFree, organicOnly, vegetarian) {
+function restrictListProducts(prods, restriction) {
 	prods.sort(comparePrice);
 	
 	
-	let product_names = [];
+	let selectedProducts = [];
 
-	for (let i=0; i<prods.length; i+=1) {
-		if (organicOnly && !prods[i].organic){
-			continue;
+	for (let i = 0; i < prods.length; i += 1) {
+		if (!((restrictions.includes("Vegetarian") && (!prods[i].vegetarian)) ||
+			(restrictions.includes("GlutenFree") && (!prods[i].glutenFree) ||
+				(restrictions.includes("Organic") && (!prods[i].organic))
+			))) {
+			
+			selectedProducts.push(prods[i]);
 		}
-
-		if(!vegetarian && !glutenFree){
-			product_names.push([prods[i].name, prods[i].price, prods[i].category, prods[i].image]);
-		}
-
-		let veg = vegetarian && prods[i].vegetarian;
-		let glut = glutenFree && prods[i].glutenFree;
-
-		if (vegetarian && glutenFree){
-			if(prods[i].glutenFree && prods[i].vegetarian){
-				product_names.push([prods[i].name, prods[i].price, prods[i].category, prods[i].image]);
-			}
-		}
-		else if (veg){
-			product_names.push([prods[i].name, prods[i].price, prods[i].category, prods[i].image]);
-		}
-		else if (glut){
-			product_names.push([prods[i].name, prods[i].price, prods[i].category, prods[i].image]);
-		}
+		
 	}
-	return product_names;
+
+	return selectedProducts;
 }
 
 function comparePrice(item1, item2) {
@@ -145,16 +132,15 @@ function comparePrice(item1, item2) {
 	return 0;
 }
 
-function getTotalPrice(chosenProducts, produntQuantity) {
-	
+function getTotalPrice(chosenProducts) {
+	console.log(chosenProducts);
 
 	totalPrice = 0;
-	for (let i=0; i<products.length; i+=1) {
-		let index = chosenProducts.indexOf(products[i].name)
-
-		if (index > -1){
-			totalPrice += products[i].price * productQuantity[index];
+	for (let i = 0; i < products.length; i += 1) {
+		let formattedName = formatProductName(products[i].name, products[i].price);
+		if (chosenProducts.indexOf(formattedName) > -1) {
+			totalPrice += products[i].price;
 		}
 	}
-	return Math.round(totalPrice * 100) / 100;
+	return totalPrice.toFixed(2);
 }
