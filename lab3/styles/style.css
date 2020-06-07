@@ -1,0 +1,44 @@
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: cornsilk;
+}
+
+footer {
+    position: absolute;
+    bottom: 25px;
+}
+
+
+#shoppingContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 95vh;
+}
+
+.clientInfor {
+    color: navy;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+  }
+
+.breadcrumb{
+  color: blueviolet;
+  font-size: 1.75rem;
+  width: 100%;
+}
+
+.breadcrumb a{
+  cursor: pointer;
+}
+
+.card{ display: none;}
+
+.cardLink{
+  color: brown;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link href = "styles/style.css" rel = "stylesheet" type = "text/css">
+        <script src = "scripts/groceries.js"></script>
+        <script src = "scripts/main.js"></script>
+        <title>Grace's Grocery Shop</title>
+    </head>
+
+    <body onload = "updatePerferences()">
+        <h1>Grace's Grocery Shop</h1>
+        <section id="shoppingContent">
+            <div>
+                <div id="Client" class = "tabcontent">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">Client Information</li>
+                        </ol>
+                    </nav>
+                    <br>
+
+                    <p>Please take below survey to help us provide better service for you.</p>
+                    <h5 class="clientInfor"><b>What kind of product you want to but?</b></h5>
+                    <div>
+                        <form id = "dietSelect" name = "dietSelect">
+                            <input type="checkbox" name="option1" value="Vegetarian" onclick="updatePreferences()">
+                            <label for="option1"> Vegetarian Friendly</label><br>
+                            <input type="checkbox" name="option2" value="GlutenFree" onclick="updatePreferences()">
+                            <label for="option2"> Gluten Free</label><br>
+                        </form>
+                    </div>
+                    <br>
+                    <h5 class="clientInfor"><b>If you prefer to buy only organic products?</b></h5>
+                    <div>
+                        <input type="radio" name="organic" value="yes" onclick="updatePreferences()">
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="organic" value="no" onclick="updatePreferences()">
+                        <label for="no">No</label>
+                    </div>
+                    <br>
+                    <br>
+                    <button type="button" onclick="openInfo(event, 'Products')" class="button button-outline-dark">
+                        Start shopping
+                    </button>
+                </div>
+
+                <div id="Products" class="tabcontent">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a onclick="openInfo(event, 'Client')" id="default">Client Information</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Products</li>
+                        </ol>
+                    </nav>
+                    <br>
+                    <h3>We have selected products based on the Information you provided.</h3>
+                    <br>
+                    <div id="accordion">
+                        <div id="bakery_sec" class="card">
+                            <div class="cardHeader">
+                                <a class="cardLink" href="#collapseOne" data-toggle="collapse">Bakery</a>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="collapse" data-parent="#accordion">
+                            <div id="bakery" class="card-body"></div>
+                        </div>
+
+                        <div id="fruitVege_sec" class="card">
+                            <div class="cardHeader">
+                                <a class="cardLink" href="#collapseTwo" data-toggle="collapse">Fruit&Vegetable</a>
+                            </div>
+                        </div>
+                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                            <div id="fruitVege" class="card-body"></div>
+                        </div>
+
+                        <div id="meat_sec" class="card">
+                            <div class="cardHeader">
+                                <a class="cardLink" href="#collapseThree" data-toggle="collapse">Meat</a>
+                            </div>
+                        </div>
+                        <div id="collapseThree" class="collapse" data-parent="#accordion">
+                            <div id="meat" class="card-body"></div>
+                        </div>
+                    </div>
+                    <br>
+                    <button id="addCart" type="button" onclick="selectedItems(); openInfo(event, 'Cart');" class="button button-outlines-success">Add selected items to cart.</button>
+                <br>
+                <br>
+                </div>
+
+                <div id="Cart" class="tabcontent">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a onclick="openInfo(event, 'Client')" id="default">Client Information</a></li>
+                        <li class="breadcrumb-item"><a onclick="openInfo(event, 'Products')">Products</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                      </ol>
+                    </nav>
+                    <br>
+                    <h3>View your cart before checkout</h3>
+                    <div id="displayCart"></div>
+                    <br>
+                    <button type="button" class="button button-outline-dark">
+                      Checkout
+                    </button>
+                </div>
+            </div>
+        </section>
+        <script>openInfo(event, 'Client');</script>
+
+    </body>
+    <footer>website designed by Yiwen Liu (8943192)</footer>
+
+</html>
