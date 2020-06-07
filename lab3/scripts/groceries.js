@@ -6,7 +6,7 @@ var products = [
         vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		category: "fruitVege",
+		foodGroup: [1,0,0,0],
 		image: "./img/brocoli.jpg",
 		price: 1.99
     },
@@ -15,7 +15,7 @@ var products = [
 		vegetarian: true,
 		glutenFree: false,
 		organic: false,
-		category: "bakery",
+		foodGroup: [0,1,0,0],
 		image:"./img/bread.jpg",
 		price: 1.69
     },
@@ -24,7 +24,7 @@ var products = [
 		vegetarian: false,
 		glutenFree: true,
 		organic: true,
-		category: "meat",
+		foodGroup: [0,0,1,0],
 		image: "./img/steak.jpg",
 		price: 8.99
 	},
