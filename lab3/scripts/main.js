@@ -16,6 +16,7 @@ function openInfo(evt, navName) {
 
 }
 
+
 /*function updatePreferences() {
 	populateListProductChoices('dietSelect', 'displayProduct');
 }*/
