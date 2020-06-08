@@ -5,9 +5,9 @@
 <head>
 
 
-
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
-
+    <script src = "scripts/groceries.js"></script>
+    <script src = "scripts/main.js"></script>
 	<title>Grace's Grocery Shop</title>
 
 	<h1 style="text-align:center">Grace's Grocery Shop</h1>
@@ -35,13 +35,14 @@
 
 
 
+
 <div id="Customer" class="navcontent">
 
   <h3>Customer Information</h3>
 
-  <p>What kind of food you would like to buy?</p>
+  <b>What kind of food you would like to buy?</b>
 
-
+	If none fits yout please leave the options unselected:
 
 
 
@@ -49,11 +50,11 @@
 
 	<input type="checkbox" id="Vegetarian" name="vegetarian" value="vegetarian">
 
-	<label for="Vegetarian">Vegetarian Friendly</label><br>
+	<label for="Vegetarian"> Vegetarian Friendly</label><br>
 
 	<input type="checkbox" id="Organic" name="organic" value="organic">
 
-	<label for="Organic">Organic Food</label><br>
+	<label for="Organic"> Organic Food</label><br>
 
 	<input type="checkbox" id="GlutenFree" name="glutenfree" value="glutenfree">
 
@@ -70,63 +71,64 @@
 
 
 </div>
+
+
+
 <div id="Products" class="navcontent">
 
-    <h3>Your targeted products</h3>
-  
-    <p>We preselected products based on your preferences.</p>
-  
-       Choose items to buy: <br>
-  
-  
-  
-       <button class="accordion" onclick="toggleItem()">Fruits & Vegtables</button>
-  
-       <div id="Fruits" class="panel">
-  
-            <div id="displayFruit"></div>
-  
-       </div>
-  
-  
-  
-       <button class="accordion" onclick="toggleItem()">Grains</button>
-  
-       <div id="Grains" class="panel">
-  
-            <div id="displayGrain"></div>
-  
-       </div>
-  
-  
-  
-       <button class="accordion" onclick="toggleItem()">Meats</button>
-  
-       <div id="Meats" class="panel">
-  
-            <div id="displayMeat"></div>
-  
-       </div>
-  
-  
-  
-       <button class="accordion" onclick="toggleItem()">Seafood</button>
-  
-       <div id="Seafood" class="panel">
-  
-            <div id="displaySeafood"></div>
-  
-       </div>
-  
-  
-       <br>
-       <button id="addCart" type="button" class="block" onclick="selectedItems()">
-  
-          Add selected items to cart.
-  
-      </button>
-  
-  </div>
+  <h3>Your targeted products</h3>
+
+  <p>Below are products we preselected for you.</p>
+
+	 Choose items to buy: <br>
+
+
+
+	 <button class="accordion" onclick="toggleItem()">Fruits & Vegtables</button>
+
+	 <div id="Fruits" class="panel">
+
+  		<div id="displayFruit"></div>
+
+	 </div>
+
+
+
+	 <button class="accordion" onclick="toggleItem()">Grains & Bakery</button>
+
+	 <div id="Grains" class="panel">
+
+  		<div id="displayGrain"></div>
+
+	 </div>
+
+
+
+	 <button class="accordion" onclick="toggleItem()">Meat</button>
+
+	 <div id="Meat" class="panel">
+
+  		<div id="displayMeat"></div>
+
+	 </div>
+
+
+
+	 <button class="accordion" onclick="toggleItem()">Seafood</button>
+
+	 <div id="Seafood" class="panel">
+
+  		<div id="displaySeafood"></div>
+
+	 </div>
+<br>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+
+		Add selected items to cart.
+
+	</button>
+
+</div>
 
 
 
@@ -142,19 +144,15 @@
 
 
 
-<script src="scripts/groceries.js"></script>
-
-<script src="scripts/main.js"></script>
 
 
 
-<footer>
-    website designed by Yiwen Liu (8943192)
 
-</footer>
+
 
 
 
 </body>
 
+<footer>website designed by Yiwen Liu (8943192)</footer>
 </html>

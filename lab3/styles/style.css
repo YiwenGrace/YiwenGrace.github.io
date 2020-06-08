@@ -1,68 +1,147 @@
-html {
-    background-color: cornsilk;
+.sidenav {
+
+  height: 100%;
+
+  width: 85px; 
+
+  position: fixed; 
+  z-index: 1; 
+
+  top: 0; 
+
+  right: 0;
+
+  background-color: #fff; /* Black */
+
+  overflow-x: hidden; /* Disable horizontal scroll */
+
+  padding-top: 20px;
+
 }
+
+
+
+
+.sidenav button {
+
+  background-color: inherit;
+
+  float: left;
+
+  border: none;
+
+  outline: none;
+
+  cursor: pointer;
+
+  padding: 14px 16px;
+
+  transition: 0.3s;
+
+}
+
+
+
+
+.sidenav button:hover {
+
+  background-color: #ddd;
+
+}
+
+
+
+
+.sidenav button.active {
+
+  background-color: #ccc;
+
+}
+
+
+
+
+.navcontent {
+
+  position: relative;
+
+  left: 0px;
+
+  display: none;
+
+  padding: 6px 6px;
+
+  border: 1px solid #ccc;=
+
+}
+
+
+
+body {
+
+  background-color: cornsilk;
+
+}
+
+
+
 
 footer {
-    position: absolute;
+
+  position: absolute;
+
     bottom: 25px;
+
     left: 25px;
+
 }
 
-.sidenav{
-  padding-top: 30px;
-  overflow-x: hidden;
-  background-color: gainsboro;
-  right: 0;
-  top: 0;
-  z-index: 1;
-  position: fixed;
-  height: 100%;
-  width: 80px;
-}
 
- .sidenav button{
-  background-color: inherit;
-  border: none;
-  transition: 0.3s;
-  padding: 12px 14px;
-  cursor: pointer;
-  float: left;
-  outline: none;
-}
 
- .sidenav button.active{
-  background-color: gray;
-}
 
- .sidenav button.hover{
-  background-color: rgb(150, 148, 148);
-}
 
- .navcontent{
-  position: relative;
-  border: 1.5px solid gainsboro;
-  left: 0px;
-  padding: 6px 12px;
-  display: none;
-}
+.accordion {
 
-.accordion{
-  background-color: burlywood;
+  background-color: plum;
+
   color: #444;
+
   cursor: pointer;
-  padding: 16px;
+
+  padding: 18px;
+
   width: 80%;
+
   text-align: left;
+
+  border: none;
+
+  outline: none;
+
   transition: 0.4s;
+
 }
 
- .active, .accordion:hover{
-  background-color: gray;
+
+
+
+.active, .accordion:hover {
+
+  background-color: grey;
+
 }
 
-.panel{
-  padding: 0 16px;
+
+
+
+.panel {
+
+  padding: 0 18px;
+
   background-color: cornsilk;
-  overflow: hidden;
+
   display: none;
+
+  overflow: hidden;
+
 }

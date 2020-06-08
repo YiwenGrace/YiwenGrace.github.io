@@ -25,6 +25,7 @@ function openInfo(evt, navName) {
 
 
 
+
 	document.getElementById(navName).style.display = "block";
 
 	evt.currentTarget.className += " active";
@@ -32,6 +33,7 @@ function openInfo(evt, navName) {
 
 
 }
+
 
 
 
@@ -49,8 +51,8 @@ for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
 
 
-
     this.classList.toggle("active");
+
 
 
 
@@ -111,49 +113,49 @@ function prefFunction() {
 
 	if(x == true && y == true && z == true) {
 
-		populateListProductChoices("Vegetarian & GlutenFree & Organic", 'displayFruit', 'displayGrain', 'displayMeat', 'displayTreat')
+		populateListProductChoices("Vegetarian & GlutenFree & Organic", 'displayFruit', 'displayGrain', 'displayMeat', 'displaySeafood')
 
 	}
 
 	else if (x == true && y == true) {
 
-		populateListProductChoices("Organic & Vegetarian", 'displayFruit', 'displayGrain', 'displayMeat', 'displayTreat')
+		populateListProductChoices("Organic & Vegetarian", 'displayFruit', 'displayGrain', 'displayMeat', 'displaySeafood')
 
 	}
 
 	else if (x == true && z ==true) {
 
-		populateListProductChoices("Vegetarian & GlutenFree", 'displayFruit', 'displayGrain', 'displayMeat', 'displayTreat')
+		populateListProductChoices("Vegetarian & GlutenFree", 'displayFruit', 'displayGrain', 'displayMeat', 'displaySeafood')
 
 	}
 
 	else if (y == true && z == true) {
 
-		populateListProductChoices("Organic & GlutenFree", 'displayFruit', 'displayGrain', 'displayMeat', 'displayTreat')
+		populateListProductChoices("Organic & GlutenFree", 'displayFruit', 'displayGrain', 'displayMeat', 'displaySeafood')
 
 	}
 
 	else if (x == true) {
 
-		populateListProductChoices("Vegetarian", 'displayFruit', 'displayGrain', 'displayMeat', 'displayTreat')
+		populateListProductChoices("Vegetarian", 'displayFruit', 'displayGrain', 'displayMeat', 'displaySeafood')
 
 	}
 
 	else if (y == true) {
 
-		populateListProductChoices("Organic", 'displayFruit', 'displayGrain', 'displayMeat', 'displayTreat')
+		populateListProductChoices("Organic", 'displayFruit', 'displayGrain', 'displayMeat', 'displaySeafood')
 
 	}
 
 	else if (z == true) {
 
-		populateListProductChoices("GlutenFree", 'displayFruit', 'displayGrain', 'displayMeat', 'displayTreat')
+		populateListProductChoices("GlutenFree", 'displayFruit', 'displayGrain', 'displayMeat', 'displaySeafood')
 
 	}
 
 	else {
 
-		populateListProductChoices("None", 'displayFruit', 'displayGrain', 'displayMeat', 'displayTreat')
+		populateListProductChoices("None", 'displayFruit', 'displayGrain', 'displayMeat', 'displaySeafood')
 
 	}
 
@@ -162,9 +164,7 @@ function prefFunction() {
 
 
 
-
 prefFunction()
-
 
 
 
@@ -184,6 +184,7 @@ function populateListProductChoices(slct1, slct2, slct3, slct4, slct5) {
 		var s5 = document.getElementById(slct5);
 
 
+
     s2.innerHTML = "";
 
 		s3.innerHTML = "";
@@ -200,8 +201,10 @@ function populateListProductChoices(slct1, slct2, slct3, slct4, slct5) {
 
 
 
+		// Line below adapted from https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_object1
 
 		optionArray.sort(function(a,b) {return a.price - b.price});
+
 
 
 
@@ -216,7 +219,7 @@ function populateListProductChoices(slct1, slct2, slct3, slct4, slct5) {
 
 		var image = productName.img;
 
-	
+
 
 		var checkbox = document.createElement("input");
 
@@ -225,8 +228,6 @@ function populateListProductChoices(slct1, slct2, slct3, slct4, slct5) {
 		checkbox.name = "product";
 
 		checkbox.value = productName.name;
-
-
 
 
 
@@ -247,8 +248,6 @@ function populateListProductChoices(slct1, slct2, slct3, slct4, slct5) {
 		label.appendChild(document.createTextNode(productName.name + " " + productName.price));
 
 
-
-	
 
 		if(productName.foodGroup[0] == 1) {
 
@@ -317,8 +316,6 @@ function populateListProductChoices(slct1, slct2, slct3, slct4, slct5) {
 	}
 
 }
-
-
 
 
 

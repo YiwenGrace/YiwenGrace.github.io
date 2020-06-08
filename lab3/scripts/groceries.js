@@ -1,4 +1,4 @@
-//images from Walmart
+
 
 var products = [
     {
@@ -7,7 +7,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		foodGroup: [1,0,0,0],
-		image: "img/brocoli.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Brocoli_03.jpg",
 		price: 1.99
     },
     {
@@ -16,7 +16,7 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		foodGroup: [0,1,0,0],
-		image:"img/bread.jpg",
+		image:"https://upload.wikimedia.org/wikipedia/commons/3/3b/Home_made_sour_dough_bread.jpg",
 		price: 1.69
     },
     {
@@ -25,7 +25,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		foodGroup: [0,0,1,0],
-		image: "img/steak.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/3/36/Steak_03_bg_040306.jpg",
 		price: 8.99
 	},
     {
@@ -34,7 +34,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		foodGroup: [0,0,1,0],
-		image: "img/pork.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jumbo_Roasted_pork%2C_Oude_Pekela_%282019%29_01.jpg",
 		price: 12.99
     },
     {
@@ -43,7 +43,7 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		foodGroup: [0,1,0,0],
-		image: "img/pasta.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/3/32/Dry_tagliatelle_pasta.jpg",
 		price: 0.99
     },
     {
@@ -52,7 +52,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		foodGroup: [1,0,0,0],
-		image: "img/salad.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/9/94/Salad_platter.jpg",
 		price: 6.99
     },
     {
@@ -61,7 +61,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		foodGroup: [1,0,0,0],
-		image: "img/orgBanana.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Organic_banana_%283077175990%29.jpg",
 		price: 3.99
 	},
     {
@@ -70,7 +70,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		foodGroup: [1,0,0,0],
-		image: "img/banana.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Ripening_banana.jpg",
 		price: 2.99
     },
     {
@@ -79,7 +79,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		foodGroup: [1,0,0,0],
-		image: "img/orgApple.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Malus-Boskoop_organic.jpg",
 		price: 4.99
     },
     {
@@ -88,7 +88,7 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		foodGroup: [0,0,1,0],
-		image: "img/chicken.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/0/06/Burger-King-Chicken-Tenders.jpg",
 		price: 8.99
     },
     {
@@ -97,7 +97,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		foodGroup: [1,0,0,0],
-		image: "img/orange.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/4/43/Ambersweet_oranges.jpg",
 		price: 7.99
 	},
 	{
@@ -106,10 +106,18 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		foodGroup: [0,0,0,1],
-		image: "img/salmon.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Atlantic_Salmon.png",
 		price: 12.99
     }
 ];
+
+
+
+
+
+
+
+
 
 function restrictListProducts(prods, restriction) {
 
@@ -170,8 +178,6 @@ function restrictListProducts(prods, restriction) {
 	return product_names;
 
 }
-
-
 
 
 
