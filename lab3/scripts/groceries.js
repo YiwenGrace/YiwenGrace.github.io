@@ -103,7 +103,7 @@ var products = [
 ];
 
 function restrictListProducts(prods, restriction) {
-	//prods.sort(comparePrice);
+	
 	
 	
 	let product_names = [];
@@ -134,15 +134,7 @@ function restrictListProducts(prods, restriction) {
 	return product_names;
 }
 
-/*function comparePrice(item1, item2) {
-	if (item1.price < item2.price) {
-		return -1;
-	}
-	if (item1.price > item2.price) {
-		return 1;
-	}
-	return 0;
-}*/
+
 
 function getTotalPrice(chosenProducts) {
 	console.log(chosenProducts);

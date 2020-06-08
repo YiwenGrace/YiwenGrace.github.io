@@ -54,10 +54,10 @@ footer {
   padding: 16px;
   width: 100%;
   text-align: left;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 
-.active, .accordion:hover{
+ .active, .accordion:hover{
   background-color: gray;
 }
 
