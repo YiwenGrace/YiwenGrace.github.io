@@ -16,63 +16,124 @@ function openInfo(evt, navName) {
 
 }
 
-var a = document.getElementsByClassName("accordion");
+var acc = document.getElementsByClassName("accordion");
+
 var i;
 
-for (i = 0; i < a.length; i++) {
 
-	a[i].addEventListener("click", function() {
-    	this.classList.toggle("active");
-		var panel = this.nextElementSibling;
 
-		if (panel.style.display === "block") {
-			panel.style.display = "none";
-		} else {
-			panel.style.display = "block";
-		}
+for (i = 0; i < acc.length; i++) {
+
+  acc[i].addEventListener("click", function() {
+
+    /* Toggle between adding and removing the "active" class,
+
+    to highlight the button that controls the panel */
+
+    this.classList.toggle("active");
+
+
+
+    /* Toggle between hiding and showing the active panel */
+
+    var panel = this.nextElementSibling;
+
+    if (panel.style.display === "block") {
+
+      panel.style.display = "none";
+
+    } else {
+
+      panel.style.display = "block";
+
+    }
+
   });
+
 }
 
-var b = document.getElementsByClassName("panel");
+
+
+var bcc = document.getElementsByClassName("panel");
+
+
 
 function toggleItem() {
-	for (i = 0; i < a.length; i++) {
-		if(a[i].className === "accordion active") {
-			a[i].className = "accordion";
-			b[i].style.display = "none";
+
+	for (i = 0; i < acc.length; i++) {
+
+		if(acc[i].className === "accordion active") {
+
+			acc[i].className = "accordion";
+
+			bcc[i].style.display = "none";
+
 		}
+
 	}
+
 }
 
-function prefFunction(){
-	var v = document.getElementById("Vegetarian").checked;
-	var o = document.getElementById("Organic").checked;
-	var g = document.getElementById("GlutenFree").checked;
-	if(v == true && o == true && g == true){
-		populateListProductChoices("Vegetarian & GlutenFree & Organic", 'displayFruit', 'displayBakery', 'displayMeat');
-	}
-	else if (v==true&&o==true){
-		populateListProductChoices("Vegetarian & Organic", 'displayFruit', 'displayBakery', 'displayMeat');
-	}
-	else if (v==true&&g==true){
-		populateListProductChoices("Vegetarian & GlutenFree", 'displayFruit', 'displayBakery', 'displayMeat');
-	}
-	else if (o==true&&g==true){
-		populateListProductChoices("GlutenFree & Organic", 'displayFruit', 'displayBakery', 'displayMeat');
-	}
-	else if (v==true){
-		populateListProductChoices("Vegetarian", 'displayFruit', 'displayBakery', 'displayMeat');
-	}
-	else if (o==true){
-		populateListProductChoices("Organic", 'displayFruit', 'displayBakery', 'displayMeat');
-	}
-	else if (g==true){
-		populateListProductChoices("GlutenFree", 'displayFruit', 'displayBakery', 'displayMeat');
-	}else{
-		populateListProductChoices("None", 'displayFruit', 'displayBakery', 'displayMeat');
-	}
-}
 
+function prefFunction() {
+
+	var x = document.getElementById("Vegetarian").checked;
+
+	var y = document.getElementById("Organic").checked;
+
+	var z = document.getElementById("GlutenFree").checked;
+
+
+
+	if(x == true && y == true && z == true) {
+
+		populateListProductChoices("Vegetarian & GlutenFree & Organic", 'displayFruit', 'displayBakery', 'displayMeat')
+
+	}
+
+	else if (x == true && y == true) {
+
+		populateListProductChoices("Organic & Vegetarian", 'displayFruit', 'displayBakery', 'displayMeat')
+
+	}
+
+	else if (x == true && z ==true) {
+
+		populateListProductChoices("Vegetarian & GlutenFree", 'displayFruit', 'displayBakery', 'displayMeat')
+
+	}
+
+	else if (y == true && z == true) {
+
+		populateListProductChoices("Organic & GlutenFree", 'displayFruit', 'displayBakery', 'displayMeat')
+
+	}
+
+	else if (x == true) {
+
+		populateListProductChoices("Vegetarian", 'displayFruit', 'displayBakery', 'displayMeat')
+
+	}
+
+	else if (y == true) {
+
+		populateListProductChoices("Organic", 'displayFruit', 'displayBakery', 'displayMeat')
+
+	}
+
+	else if (z == true) {
+
+		populateListProductChoices("GlutenFree", 'displayFruit', 'displayBakery', 'displayMeat')
+
+	}
+
+	else {
+
+		populateListProductChoices("None", 'displayFruit', 'displayBakery', 'displayMeat')
+
+	}
+
+}
 prefFunction()
 
 function populateListProductChoices(sl1,sl2,sl3,sl4) {
@@ -84,7 +145,7 @@ function populateListProductChoices(sl1,sl2,sl3,sl4) {
 	s3.innerHTML="";
 	s4.innerHTML="";
 	var optionArray = restrictListProducts(products,s1);
-	optionArray.sort(function(x,y) {return x.price-y.price});
+	optionArray.sort(function(a,b) {return a.price-b.price});
 	for (i = 0; i < optionArray.length; i++) {
 		var productName = optionArray[i];
 		var image = productName.img;
