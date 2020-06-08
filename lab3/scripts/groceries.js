@@ -130,9 +130,6 @@ function restrictListProducts(prods, restriction) {
 		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
 			product_names.push(prods[i]);
 		}
-		else if (restriction == "None"){
-			product_names.push(prods[i]);
-		}
 	}
 	return product_names;
 }
