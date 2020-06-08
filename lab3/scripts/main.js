@@ -16,10 +16,6 @@ function openInfo(evt, navName) {
 
 }
 
-
-/*function updatePreferences() {
-	populateListProductChoices('dietSelect', 'displayProduct');
-}*/
 var a = document.getElementsByClassName("accordion");
 var i;
 
@@ -129,109 +125,6 @@ function populateListProductChoices(sl1,sl2,sl3,sl4) {
 		}
 	}
 }
-
-	
-
-	/*var dietSelect = document.getElementById("dietSelect");
-	var checkboxes = dietSelect.getElementsByTagName("input");
-
-	var restrictions = [];
-	for (i = 0; i < checkboxes.length; i++) {
-		if (checkboxes[i].checked) {
-			restrictions.push(checkboxes[i].value)
-		}
-	}
-
-	console.log(restrictions);*/
-	
-
-	/*var optionArray = restrictListProducts(products, glutenFree, organicOnly, vegetarian);
-
-	let bakery=[];
-	let fruitVege=[];
-	let meat=[];
-
-	for (i = 0; i < optionArray.length; i++) {
-
-		/*var productName = formatProductName(optionArray[i].name, optionArray[i].price);
-
-		var checkbox = document.createElement("input");
-		checkbox.type = "checkbox";
-		checkbox.name = "product";
-		checkbox.value = productName;
-		s2.appendChild(checkbox);
-
-		var label = document.createElement('label')
-		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName));
-		s2.appendChild(label);
-
-		s2.appendChild(document.createElement("br"));
-
-		switch(optionArray[i][2]){
-			case "bakery":
-				bakery.push(optionArray[i]);
-				break;
-			case "fruitVege":
-				fruitVege.push(optionArray[i]);
-				break;
-			case "meat":
-				meat.push(optionArray[i]);
-				break;
-		}
-	}
-
-	if(bakery && !glutenFree){
-		document.getElementById("bakery_sec").style.display = "block";
-		fillCategories(bakery, "bakery");
-	}else{
-		document.getElementById("bakery").style.display = "none";
-	}
-
-	if(fruitVege){
-		document.getElementById("fruitVege_sec").style.display = "block";
-		fillCategories(fruitVege, "fruitVege");
-	}
-
-	if(meat && !vegetarian){
-		document.getElementById("meat_sec").style.display = "block";
-		fillCategories(meat, "meat");
-	}
-	else{
-		document.getElementById("meat").style.display = "none";
-	}
-}
-
-/*function formatProductName(productName, price){
-	return productName + " ($" + price + ")";
-}
-function fillCategories(arr, el){
-	tmp = document.getElementById(el);
-	tmp.innerHTML = "";
-
-	for(i=0; i<arr.length;i++){
-		var productName = arr[i][0];
-		var price = arr[i][1];
-		let img = document.createElement("img");
-		img.src = arr[i][3];
-		tmp.appendChild(img);
-
-		var label = document.createElement('label');
-		label.htmlFor = productName;
-		label.appendChild(document.createTextNode('\u00A0\u00A0'+ `${productName} - $${price}/ea` + '\u00A0\u00A0'));
-		tmp.appendChild(label);
-
-		var quantity = document.createElement("input");
-		quantity.type = "number";
-		quantity.name = "product";
-		quantity.value = "0";
-		quantity.id = productName;
-		quantity.min = 0;
-		quantity.max = 10;
-		tmp.appendChild(quantity);
-		tmp.appendChild(document.createElement("br"));
-	}
-}*/
 
 function selectedItems() {
 
