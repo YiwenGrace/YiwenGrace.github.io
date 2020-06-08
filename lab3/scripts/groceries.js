@@ -7,7 +7,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		foodGroup: [1,0,0],
-		image: "./img/brocoli.jpg",
+		image: "img/brocoli.jpg",
 		price: 1.99
     },
     {
@@ -16,7 +16,7 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		foodGroup: [0,1,0],
-		image:"./img/bread.jpg",
+		image:"img/bread.jpg",
 		price: 1.69
     },
     {
@@ -25,7 +25,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		foodGroup: [0,0,1],
-		image: "./img/steak.jpg",
+		image: "img/steak.jpg",
 		price: 8.99
 	},
     {
@@ -34,7 +34,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		foodGroup: [0,0,1],
-		image: "./img/pork.jpg",
+		image: "img/pork.jpg",
 		price: 12.99
     },
     {
@@ -43,7 +43,7 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		foodGroup: [0,1,0],
-		image: "./img/pasta.jpg",
+		image: "img/pasta.jpg",
 		price: 0.99
     },
     {
@@ -52,7 +52,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		foodGroup: [1,0,0],
-		image: "./img/salad.jpg",
+		image: "img/salad.jpg",
 		price: 6.99
     },
     {
@@ -61,7 +61,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		foodGroup: [1,0,0],
-		image: "./img/orgBanana.jpg",
+		image: "img/orgBanana.jpg",
 		price: 3.99
 	},
     {
@@ -70,7 +70,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		foodGroup: [1,0,0],
-		image: "./img/banana.jpg",
+		image: "img/banana.jpg",
 		price: 2.99
     },
     {
@@ -79,7 +79,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		foodGroup: [1,0,0],
-		image: "./img/orgApple.jpg",
+		image: "img/orgApple.jpg",
 		price: 4.99
     },
     {
@@ -88,7 +88,7 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		foodGroup: [0,0,1],
-		image: "./img/chicken.jpg",
+		image: "img/chicken.jpg",
 		price: 8.99
     },
     {
@@ -97,32 +97,47 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		foodGroup: [1,0,0],
-		image: "./img/orange.jpg",
+		image: "img/orange.jpg",
 		price: 7.99
 	}
 ];
 
 function restrictListProducts(prods, restriction) {
-	prods.sort(comparePrice);
+	//prods.sort(comparePrice);
 	
 	
-	let selectedProducts = [];
+	let product_names = [];
 
-	for (let i = 0; i < prods.length; i += 1) {
-		if (!((restrictions.includes("Vegetarian") && (!prods[i].vegetarian)) ||
-			(restrictions.includes("GlutenFree") && (!prods[i].glutenFree) ||
-				(restrictions.includes("Organic") && (!prods[i].organic))
-			))) {
-			
-			selectedProducts.push(prods[i]);
+	for (let i=0; i<prods.length; i+=1) {
+		if ((restriction == "Vegetarian & GlutenFree & Organic") && (prods[i].vegetarian == true) && (prods[i].glutenFree == true) && (prods[i].organic == true)){
+			product_names.push(prods[i]);
 		}
-		
+		else if ((restriction == "Vegetarian & GlutenFree") && (prods[i].vegetarian == true) && (prods[i].glutenFree == true)){
+			product_names.push(prods[i]);
+		}
+		else if ((restriction == "Organic & GlutenFree") && (prods[i].organic == true) && (prods[i].glutenFree == true)){
+			product_names.push(prods[i]);
+		}
+		else if ((restriction == "Organic & Vegetarian") && (prods[i].organic == true) && (prods[i].vegetarian == true)){
+			product_names.push(prods[i]);
+		}
+		else if ((restriction == "Organic") && (prods[i].organic == true)){
+			product_names.push(prods[i]);
+		}
+		else if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
+			product_names.push(prods[i]);
+		}
+		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
+			product_names.push(prods[i]);
+		}
+		else if (restriction == "None"){
+			product_names.push(prods[i]);
+		}
 	}
-
-	return selectedProducts;
+	return product_names;
 }
 
-function comparePrice(item1, item2) {
+/*function comparePrice(item1, item2) {
 	if (item1.price < item2.price) {
 		return -1;
 	}
@@ -130,17 +145,16 @@ function comparePrice(item1, item2) {
 		return 1;
 	}
 	return 0;
-}
+}*/
 
 function getTotalPrice(chosenProducts) {
 	console.log(chosenProducts);
 
 	totalPrice = 0;
-	for (let i = 0; i < products.length; i += 1) {
-		let formattedName = formatProductName(products[i].name, products[i].price);
-		if (chosenProducts.indexOf(formattedName) > -1) {
+	for (let i=0; i<products.length; i+=1) {
+		if (chosenProducts.indexOf(products[i].name) > -1){
 			totalPrice += products[i].price;
 		}
 	}
-	return totalPrice.toFixed(2);
+	return totalPrice;
 }

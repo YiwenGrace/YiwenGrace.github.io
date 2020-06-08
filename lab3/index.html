@@ -26,30 +26,30 @@
               <label for="Organic"> Organic Food</label><br>          
               <input type="checkbox" id="GlutenFree" name="glutenfree" value="glutenfree">        
               <label for="GlutenFree"> Gluten Free</label><br>
-              <button onclick="prefFunction()">Start shopping</button>
+              <button onclick="prefFunction()">Confirm</button>
         </div>
                    
         <div id="Products" class="navcontent">          
             <h3>Your targeted products</h3>          
-            <p>We preselected products based on your preferences.</p>
-               <button class="accordion" onclick="toggleItem()">Fruits & Vegtables</button>          
-               <div id="Fruits" class="panel">         
-                    <div id="displayFruit"></div>          
-               </div>
+            <p>Below are products we preselected for you.</p>
+            <button class="accordion" onclick="toggleItem()">Fruits & Vegtables</button>          
+            <div id="Fruits" class="panel">         
+                <div id="displayFruit"></div>          
+            </div>
 
-               <button class="accordion" onclick="toggleItem()">Bakery</button>          
-               <div id="Bakery" class="panel">          
-                    <div id="displayBakery"></div>         
-               </div>
+            <button class="accordion" onclick="toggleItem()">Bakery</button>          
+            <div id="Bakery" class="panel">          
+                <div id="displayBakery"></div>         
+            </div>
 
-              <button class="accordion" onclick="toggleItem()">Meat</button>          
-               <div id="Meat" class="panel">        
-                    <div id="displayMeat"></div>         
-               </div>
- 
-               <button id="addCart" type="button" class="block" onclick="selectedItems()">         
-                  Add selected items to cart.          
-              </button>          
+            <button class="accordion" onclick="toggleItem()">Meat</button>          
+            <div id="Meat" class="panel">        
+                <div id="displayMeat"></div>         
+            </div>
+            <br>
+            <button id="addCart" type="button" class="block" onclick="selectedItems()">         
+                Add selected items to cart.          
+            </button>          
         </div>
           
         <div id="Cart" class="navcontent">          

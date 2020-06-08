@@ -1,4 +1,4 @@
-function openInfo(evt, tabName) {
+function openInfo(evt, navName) {
 
 	
 	navcontent = document.getElementsByClassName("navcontent");
@@ -19,12 +19,12 @@ function openInfo(evt, tabName) {
 /*function updatePreferences() {
 	populateListProductChoices('dietSelect', 'displayProduct');
 }*/
-var acc = document.getElementsByClassName("accordion");
+var a = document.getElementsByClassName("accordion");
 var i;
 
-for (i = 0; i < acc.length; i++) {
+for (i = 0; i < a.length; i++) {
 
-	acc[i].addEventListener("click", function() {
+	a[i].addEventListener("click", function() {
     	this.classList.toggle("active");
 		var panel = this.nextElementSibling;
 
@@ -36,13 +36,13 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-var bcc = document.getElementsByClassName("panel");
+var b = document.getElementsByClassName("panel");
 
 function toggleItem() {
-	for (i = 0; i < acc.length; i++) {
-		if(acc[i].className === "accordion active") {
-			acc[i].className = "accordion";
-			bcc[i].style.display = "none";
+	for (i = 0; i < a.length; i++) {
+		if(a[i].className === "accordion active") {
+			a[i].className = "accordion";
+			b[i].style.display = "none";
 		}
 	}
 }
@@ -87,7 +87,7 @@ function populateListProductChoices(sl1,sl2,sl3,sl4) {
 	s3.innerHTML="";
 	s4.innerHTML="";
 	var optionArray = restrictListProducts(products,s1);
-	optionArray.sort(function(a,b) {return a.price-b.price});
+	optionArray.sort(function(x,y) {return x.price-y.price});
 	for (i = 0; i < optionArray.length; i++) {
 		var productName = optionArray[i];
 		var image = productName.img;
@@ -97,8 +97,8 @@ function populateListProductChoices(sl1,sl2,sl3,sl4) {
 		checkbox.value = productName.name;
 		var picture = document.createElement("IMG");
 		picture.setAttribute("src", image);
-		picture.setAttribute("width", "304");
-		picture.setAttribute("height", "228");
+		picture.setAttribute("width", "250");
+		picture.setAttribute("height", "220");
 		var label = document.createElement('label')
 		label.htmlFor = productName.name;
 		label.appendChild(document.createTextNode(productName.name + " " + productName.price));
@@ -118,7 +118,7 @@ function populateListProductChoices(sl1,sl2,sl3,sl4) {
 			s3.appendChild(label);
 			s3.appendChild(document.createElement("br"));
 		}
-		else (productName.foodGroup[2] == 1) {
+		else  {
 			s4.appendChild(checkbox);
 			s4.appendChild(picture);
 			s4.appendChild(document.createElement("br"));
