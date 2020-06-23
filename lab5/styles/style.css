@@ -1,0 +1,39 @@
+body,
+html {
+
+    background-color: rgb(233, 230, 230);
+  
+  }
+  
+  ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #E8E8E8;
+  }
+  
+  ul.topnav li {float: left;}
+  
+  ul.topnav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+  }
+  
+  ul.topnav li a:hover:not(.active) {background-color: #BDB76B;}
+  
+  ul.topnav li a.active {background-color: #FF7F50;}
+  
+  ul.topnav li.right {float: right;}
+
+  
+  footer {
+  
+    text-align: center;
+    margin: 20px;
+  
+  }
