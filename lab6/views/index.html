@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>Lab1 Survey</title>
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      <style>
+        body {
+          background-color: cornsilk;
+          text-align: center;
+        }
+        img {
+          width: 750px;
+          max-width: 90%;
+        }
+        .question {
+          padding: 30px;
+          width: 750px;
+          max-width: 90%;
+          text-align: left;
+          margin: auto;
+        }
+
+        textarea {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        textAreaContainer {
+          margin: auto;
+          padding: 5px;
+        }
+
+        footer {
+          margin-left: 500px;
+        }
+      </style>
+    </head>
+    <body>
+        <div class = "header">
+          <h1>Survey</h1>
+          <p>Please visit <a href = "https://www.octranspo.com/en/">OC Transpo</a> and fill this survey.</p>
+        </div>
+
+        <a href = "https://www.octranspo.com/en/"><img src = "https://yiwengrace.github.io\lab1/oc.png"></a>
+
+        <form>
+            <div class = "question">
+                <h2>Your name:</h2>
+                <p><label>First Name:
+                    <input name="fname" type = "text" placeholder = "First name" />(First name)
+                </label></p>
+            </div>
+
+            <div class = "question">
+                <h2>What is your gender?</h2>
+                <input type = "radio" name = "fm" value="Male">Male<br>
+                <input type = "radio" name = "fm" value="Female">Female<br>
+            </div>
+
+            <div class = "question">
+                <h2>How often do you use this website?</h2>
+                <select name="freq">
+                    <option value="twice a day">Twice a day</option>
+                    <option value="once a day">Once a day</option>
+                    <option value="once a week">Once a week</option>
+                    <option value="once a month">Once a month</option>
+                </select>
+            </div>
+
+            <div class = "question">
+                <h2>What information do you visit OC Transpo website for?</h2>
+                <input type = "checkbox" name = "info" value = "Plan a trip">Plan a trip<br>
+                <input type = "checkbox" name = "info" value = "Update service">Service update<br>
+                <input type = "checkbox" name = "info" value = "Next departure">Next departure<br>
+                <input type = "checkbox" name = "info" value = "Bus news">Bus news<br>
+
+            </div>
+
+            <div class = "question">
+                <h2>Do you agree the UI of OC Transpo website is efficient?</h2>
+                Strongly Disagree<input type="radio" name="likert" value="Strongly Disagree">
+                <input type="radio" name="likert" value="Disagree">
+                <input type="radio" name="likert" value="Neutral">
+                <input type="radio" name="likert" value="Agree">
+                <input type="radio" name="likert" value="Strongly Agree">Strongly Agree<br>
+                <br>
+            </div>
+
+            <div class="question">
+                <h2>Additional comments to help improve the UI:</h2>
+                <div class="textAreaContainer">
+                    <textarea name="comment"></textarea>
+                </div>
+            </div>
+
+            <p>Thanks for filling this survey.</p>
+            <button type = "submit" class="btn btn-warning" id = "bb">Submit</button>
+
+        </form>
+
+        <br>
+        <br>
+        <script src="/assets/action.js"></script>
+    </body>
+
+    <footer>website designed by Yiwen Liu (8943192)</footer>
+
+</html>

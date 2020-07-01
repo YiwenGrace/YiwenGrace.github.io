@@ -1,0 +1,45 @@
+<html lang="en-US">
+<head>
+    <title>Survey Analysis</title>
+</head>
+
+<body>
+    <h1>Survey analysis</h1>
+    <h2>Name</h2>
+    <ul>
+    <% for (var i=0; i<results[0].length; i++){ %>
+        <li><%= results[0][i].fname %> :  <%= results[0][i].count %></li>
+    <% } %>
+    </ul>
+    <h2>Gender</h2>
+    <ul>
+    <% for (var i=0; i<results[1].length; i++){ %>
+        <li><%= results[1][i].fm %> :  <%= results[1][i].count %></li>
+    <% } %>
+    </ul>
+    <h2>Frequent</h2>
+    <ul>
+    <% for (var i=0; i<results[2].length; i++){ %>
+        <li><%= results[2][i].freq %> :  <%= results[2][i].count %></li>
+    <% } %>
+    </ul>
+    <h2>Information</h2>
+    <ul>
+    <% for (var i=0; i<results[3].length; i++){ %>
+        <li><%= results[3][i].info %> :  <%= results[3][i].count %></li>
+    <% } %>
+    </ul>
+    <h2>Comments</h2>
+    <ul>
+    <% for (var i=0; i<results[4].length; i++){ %>
+        <li><%= results[4][i].comment %> :  <%= results[4][i].count %></li>
+    <% } %>
+    </ul>
+    <h2>Agreement</h2>
+    <ul>
+    <% for (var i=0; i<results[5].length; i++){ %>
+        <li><%= results[5][i].likert %> :  <%= results[5][i].count %></li>
+    <% } %>
+    </ul>
+</body>
+</html>
