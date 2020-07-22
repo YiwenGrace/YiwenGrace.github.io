@@ -3,6 +3,7 @@ import React,{Component} from 'react';
 
 import TopNavBar from './components/TopNavBar';
 import Welcome from './components/Welcome';
+import WelcomeF from './components/WelcomeF';
 import Course from './components/Course';
 import Team from './components/Team';
 import Register from './components/Register';
@@ -31,7 +32,7 @@ class App extends Component {
               <Route exact path='/course' component={Course} />
               <Route exact path='/team' component={Team} />
               <Route exact path='/register' component={Register} />
-             
+              <Route exact path='/welcomeF' component={WelcomeF} />
               
               <Route exact path='/mistake' component={Mistake} />
               
